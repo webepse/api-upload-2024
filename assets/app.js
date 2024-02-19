@@ -9,6 +9,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'; 
 import HomePage from './pages/HomePage';
+import AddProduct from './pages/AddProduct';
+import ProductsPage from './pages/ProductsPage';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Router>
             <main className='container pt-5'>
                 <Routes>
+                    <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/add-prod" element={<AddProduct />} />
                     <Route path="/" element={ <HomePage />}/>
                 </Routes>
             </main>
