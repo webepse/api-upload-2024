@@ -11,6 +11,8 @@ use App\Repository\ProductRepository;
 use ApiPlatform\Metadata\GetCollection;
 use App\Controller\UploadProductController;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ApiResource(
     operations: [
@@ -37,6 +39,12 @@ class Product
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Length(
+        min: 2,
+        max: 255,
+        minMessage: "Le nom doit avoir minimum 2 caractères",
+        maxMessage: "Le nom doit avoir maximum 255 caractères"
+    )]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
