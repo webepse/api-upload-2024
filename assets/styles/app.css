@@ -1,3 +1,8 @@
 body {
     background-color: skyblue;
 }
+
+.card-img-top{
+    height: 300px;
+    object-fit: cover;
+}
